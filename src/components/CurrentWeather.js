@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
 
-const getWeatherIcon = (description, size) => {
+const getWeatherIcon = (description, size, color) => {
     switch (description) {
         case 'clear sky':
-            return <WiDaySunny size={size} />;
+            return <WiDaySunny size={size} color={color} />;
         case 'few clouds':
         case 'scattered clouds':
         case 'broken clouds':
-            return <WiCloudy size={size} />;
+            return <WiCloudy size={size} color={color} />;
         case 'shower rain':
         case 'rain':
-            return <WiRain size={size} />;
+            return <WiRain size={size} color={color} />;
         case 'snow':
-            return <WiSnow size={size} />;
+            return <WiSnow size={size} color={color} />;
         case 'thunderstorm':
-            return <WiThunderstorm size={size} />;
+            return <WiThunderstorm size={size} color={color} />;
         default:
-            return <WiDaySunny size={size} />;
+            return <WiDaySunny size={size} color={color} />;
     }
 };
 
@@ -50,7 +50,7 @@ const CurrentWeather = ({ city }) => {
     return (
         <div className="card mb-2 border-0">
             <div className="card-body border-0">
-                <h2 className="card-title mt-5 mb-3">Today</h2>
+                <h4 className="card-title mt-5 mb-3">Today</h4>
                 {loading ? (
                     <p>Loading...</p>
                 ) : error ? (
@@ -59,11 +59,15 @@ const CurrentWeather = ({ city }) => {
                     <div>
                         <div className="d-flex justify-content-between">
                             <h3 className="card-title">{city}</h3>
-                            {getWeatherIcon(weather.weather[0].description, 100)}
+                            {getWeatherIcon(weather.weather[0].description, 100, "#ff6347")}
                         </div>
-                        <p>Temperature: {weather.main.temp}°C </p>
                         <div className="d-flex justify-content-between">
                             <p>WS: {weather.wind.speed} m/s</p>
+                            <p>{weather.main.temp}°C </p>
+                        </div>
+
+                        <div className="d-flex justify-content-between">
+
                             <p>H: {weather.main.humidity}%</p>
                             <p>{weather.weather[0].description}</p>
                         </div>
