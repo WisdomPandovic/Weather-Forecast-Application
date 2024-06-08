@@ -18,7 +18,7 @@ This is a simple Weather Forecast Application built using React.js. It allows us
 ## Installation
 
 1. Clone the repository:
-git clone <repository-url>
+git clone https://github.com/WisdomPandovic/Weather-Forecast-Application
 
 2. Navigate into the project directory:
 cd weather-forecast-app
