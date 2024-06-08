@@ -107,15 +107,30 @@ body {
 
 .temperature{
   font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
 }
 
 .weather-container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .weather-icon {
   width: 100px; 
   height: 100px; 
   margin-left: 10px; 
+}
+
+.temperature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+}
+
+.degree-symbol {
+  font-size: 13px;
+  line-height: 1;
 }

@@ -57,7 +57,10 @@ const MyLocationWeather = () => {
                     <p>{getCurrentDate()}</p>
                     <div className="weather-container">
                         <p>{getWeatherIcon(location.weather[0].description, "#F9C51A")}</p>
-                        <p className="temperature">{location.main.temp}°C</p>
+                        <div className="temperature-container">
+                            <span className="degree-symbol">° C</span>
+                            <p className="temperature">{location.main.temp}</p>
+                        </div>
                     </div>
                 </div>
             ) : null}

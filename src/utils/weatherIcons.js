@@ -1,7 +1,4 @@
-// src/utils/weatherIcons.js
 import React from 'react';
-
-// Import your PNG icons
 import clearSky from '../icons/clear-sky.png';
 import fewClouds from '../icons/few-clouds.png';
 import scatteredClouds from '../icons/scattered-clouds.png';
