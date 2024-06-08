@@ -1,6 +1,6 @@
 // src/components/SearchBar.js
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({ onSearch }) => {
     const [input, setInput] = useState('');
@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch }) => {
                 placeholder="Search for a City..."
             />
             <button className="btn btn-dull-gray" onClick={handleSearch}>
-                <FaSearch className='search-icon'/> {/* Render the search icon */}
+                <FiSearch className='search-icon'/> 
             </button>
         </div>
     );
