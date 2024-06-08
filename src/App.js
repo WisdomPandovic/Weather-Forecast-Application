@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import MultipleCitiesWeather from './components/MultipleCitiesWeather';
+import MyLocationWeather from './components/MyLocationWeather'
 import axios from 'axios';
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
     const [defaultWeather, setDefaultWeather] = useState([]);
     const [error, setError] = useState('');
 
-    const defaultCities = ['Abuja', 'Lagos', 'Kano', 'Port Harcourt'];
+    const defaultCities = ['Abuja', 'Lagos', 'Kano', 'Imo'];
 
     useEffect(() => {
         // Fetch and display weather forecast for the default cities when the app loads
@@ -39,6 +40,7 @@ const App = () => {
 
     return (
         <div className="container-fluid bg-dull-gray">
+            <MyLocationWeather/> 
             <SearchBar onSearch={handleSearch} />
             {city ? (
                 <>

@@ -50,7 +50,7 @@ const Forecast = ({ city }) => {
     return (
         <div className="card border-0">
             <div className="card-body">
-                <h2 className="card-title mb-5">This week Forecast for {city}</h2>
+                <h2 className="card-title mb-5 text-white">This week Forecast for {city}</h2>
                 {loading ? (
                     <p>Loading...</p>
                 ) : error ? (
@@ -60,17 +60,17 @@ const Forecast = ({ city }) => {
                         <table className="table table-striped table-borderless" style={{ backgroundColor: '#203a35', color: 'white' }}>
                             <thead>
                                 <tr>
-                                    <th style={{ backgroundColor: '#203a35', color: 'white' }}>Day</th>
-                                    <th style={{ backgroundColor: '#203a35', color: 'white' }}>Temperature (°C)</th>
-                                    <th style={{ backgroundColor: '#203a35', color: 'white' }}>Conditions</th>
+                                    <th style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>Day</th>
+                                    <th style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>Temperature (°C)</th>
+                                    <th style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>Conditions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {getPastDates().map((day, index) => (
                                     <tr key={index}>
-                                        <td style={{ backgroundColor: '#203a35', color: 'white' }}>{day}</td>
-                                        <td style={{ backgroundColor: '#203a35', color: 'white' }}>{forecast[index]?.main.temp}°C</td>
-                                        <td style={{ backgroundColor: '#203a35', color: 'white' }}>{forecast[index]?.weather[0]?.description}</td>
+                                        <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{day}</td>
+                                        <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{forecast[index]?.main.temp}°C</td>
+                                        <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{forecast[index]?.weather[0]?.description}</td>
                                     </tr>
                                 ))}
                             </tbody>

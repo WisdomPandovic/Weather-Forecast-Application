@@ -13,11 +13,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .bg-dull-gray {
   min-height: 100vh;
-  background-color: #415A55;
+  background-color: #0b5b76;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -33,14 +34,14 @@ body {
 }
 
 .card-body {
-  background-color: #203a35;
-  color: white !important;
+  background-color: #82b0b7;
+  color: rgb(28, 10, 10) !important;
   border-radius: 10px;
   box-shadow: none !important;
 }
 
 .form-control {
-  background-color: #203a35 !important;
+  background-color: #82b0b7!important;
   color: white !important;
   border-radius: 10px;
 
@@ -52,8 +53,8 @@ body {
 }
 
 .btn-dull-gray {
-  background-color: #203a35 !important;
-  color: #ffffff;
+  background-color: #82b0b7 !important;
+  color: #000;
 }
 
 .search-icon {
@@ -84,4 +85,37 @@ body {
 
 .card {
   background-color: transparent !important; 
+}
+
+.weather-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-container p {
+  margin: 0;
+}
+
+.weather-container p:first-child {
+  margin-right: 10px; /* Adjust spacing between the icon and temperature */
+}
+
+.weather-container svg {
+  width: 100px; /* Adjust the width of the icon */
+  height: 100px; /* Adjust the height of the icon */
+}
+
+.temperature{
+  font-size: 30px;
+}
+
+.weather-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 100px; /* Adjust the width of the icon */
+  height: 100px; /* Adjust the height of the icon */
+  margin-left: 10px; /* Adjust spacing between the city name and the icon */
 }

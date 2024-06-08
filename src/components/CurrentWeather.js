@@ -50,24 +50,26 @@ const CurrentWeather = ({ city }) => {
     return (
         <div className="card mb-2 border-0">
             <div className="card-body border-0">
-                <h4 className="card-title mt-5 mb-3">Today</h4>
+                <h4 className="card-title mt-5 mb-3 text-white">Today</h4>
                 {loading ? (
                     <p>Loading...</p>
                 ) : error ? (
                     <p>{error}</p>
                 ) : weather ? (
                     <div>
-                        <div className="d-flex justify-content-between">
-                            <h3 className="card-title">{city}</h3>
-                            {getWeatherIcon(weather.weather[0].description, 100, "#ff6347")}
-                        </div>
-                        <div className="d-flex justify-content-between">
+                      <div className="weather-container">
+    <h3 className="card-title text-white">{city}</h3>
+    <div className="weather-icon">
+        {getWeatherIcon(weather.weather[0].description, 100, "#F9C51A")}
+    </div>
+</div>
+
+                        <div className="d-flex justify-content-between text-white">
                             <p>WS: {weather.wind.speed} m/s</p>
                             <p>{weather.main.temp}°C </p>
                         </div>
 
-                        <div className="d-flex justify-content-between">
-
+                        <div className="d-flex justify-content-between text-white">
                             <p>H: {weather.main.humidity}%</p>
                             <p>{weather.weather[0].description}</p>
                         </div>
