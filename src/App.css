@@ -100,9 +100,9 @@ body {
   margin-right: 10px; 
 }
 
-.weather-container svg {
-  width: 100px;
-  height: 100px;
+.weather-container img {
+  width: 80px;
+  height: 80px;
 }
 
 .temperature{
