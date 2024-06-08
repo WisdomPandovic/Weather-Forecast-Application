@@ -5,7 +5,8 @@ import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import MultipleCitiesWeather from './components/MultipleCitiesWeather';
-import MyLocationWeather from './components/MyLocationWeather'
+import MyLocationWeather from './components/MyLocationWeather';
+import Footer from './components/Footer';
 import axios from 'axios';
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
                     ))}
                 </div>
             )}
+            <Footer/> 
         </div>
     );
 };

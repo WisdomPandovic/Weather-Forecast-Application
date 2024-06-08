@@ -77,7 +77,7 @@ const Forecast = ({ city }) => {
                                     <tr key={index}>
                                         <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{day}</td>
                                         <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{forecast[index]?.main.temp}°C</td>
-                                        <td style={{ backgroundColor: '#82b0b7 ', color: 'white' }}>{forecast[index]?.weather[0]?.description}</td>
+                                        <td style={{ backgroundColor: '#82b0b7 ', color: 'white', textTransform: 'capitalize' }}>{forecast[index]?.weather[0]?.description}</td>
                                     </tr>
                                 ))}
                             </tbody>

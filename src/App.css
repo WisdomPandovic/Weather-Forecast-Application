@@ -41,7 +41,7 @@ body {
 }
 
 .form-control {
-  background-color: #82b0b7!important;
+  background-color: #82b0b7 !important;
   color: white !important;
   border-radius: 10px;
 
@@ -84,7 +84,7 @@ body {
 }
 
 .card {
-  background-color: transparent !important; 
+  background-color: transparent !important;
 }
 
 .weather-container {
@@ -97,7 +97,7 @@ body {
 }
 
 .weather-container p:first-child {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .weather-container img {
@@ -105,8 +105,13 @@ body {
   height: 80px;
 }
 
-.temperature{
-  font-size: 30px;
+.current-weather-container img {
+  width: 80px;
+  height: 80px;
+}
+
+.temperature {
+  font-size: 50px;
   line-height: 1;
   font-weight: 800;
 }
@@ -117,10 +122,16 @@ body {
   justify-content: space-around;
 }
 
+.current-weather-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .weather-icon {
-  width: 100px; 
-  height: 100px; 
-  margin-left: 10px; 
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
 }
 
 .temperature-container {
@@ -128,6 +139,12 @@ body {
   flex-direction: column;
   align-items: end;
   justify-content: end;
+}
+
+.temperature-containers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .degree-symbol {

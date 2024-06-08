@@ -34,7 +34,8 @@ const MyLocationWeather = () => {
 
     const getCurrentDate = () => {
         const currentDate = new Date();
-        return currentDate.toLocaleDateString();
+        const options = { weekday: 'short', month: 'long', day: 'numeric' };
+        return currentDate.toLocaleDateString(undefined, options);
     };
 
     return (
@@ -53,13 +54,13 @@ const MyLocationWeather = () => {
             ) : location ? (
                 <div>
                     <h2>My location</h2>
-                    <h2>{location.name}</h2>
+                    <h2>{`${location.name}, ${location.sys.country}`}</h2>
                     <p>{getCurrentDate()}</p>
                     <div className="weather-container">
                         <p>{getWeatherIcon(location.weather[0].description, "#F9C51A")}</p>
                         <div className="temperature-container">
                             <span className="degree-symbol">° C</span>
-                            <p className="temperature">{location.main.temp}</p>
+                            <p className="temperature">{Math.floor(location.main.temp)}</p>
                         </div>
                     </div>
                 </div>
