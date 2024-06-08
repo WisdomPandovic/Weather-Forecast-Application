@@ -44,7 +44,7 @@ const CurrentWeather = ({ city }) => {
 
     return (
         <div className="card mb-2 border-0">
-            <div className="card-body border-0">
+            <div className="card-body border-0 custom-card ">
                 {loading ? (
                     <div className="d-flex justify-content-center">
                         <ThreeDots

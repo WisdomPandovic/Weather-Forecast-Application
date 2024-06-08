@@ -61,6 +61,10 @@ body {
   color: #ffffff;
 }
 
+.city-items{
+  height: 500px;
+}
+
 .city-item-enter {
   opacity: 0;
   transform: translateY(-20px);
@@ -150,4 +154,8 @@ body {
 .degree-symbol {
   font-size: 13px;
   line-height: 1;
+}
+
+.custom-card {
+  height: 300px;
 }

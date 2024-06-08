@@ -8,7 +8,7 @@ const MultipleCitiesWeather = () => {
     return (
         <div className="container mt-4">
             <div className="row">
-                <TransitionGroup>
+                <TransitionGroup className="d-flex flex-wrap">
                     {cities.map((city, index) => (
                         <CSSTransition key={city} timeout={500} classNames="city-item">
                             <div className="col-md-6 col-lg-3 mb-4">
