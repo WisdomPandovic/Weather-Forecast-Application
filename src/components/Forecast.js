@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ThreeDots } from 'react-loader-spinner';
 import { mockForecast } from '../mockData';
 
 const Forecast = ({ city }) => {
@@ -51,7 +52,14 @@ const Forecast = ({ city }) => {
             <div className="card-body">
                 <h2 className="card-title mb-5 text-white">This week Forecast for {city}</h2>
                 {loading ? (
-                    <p>Loading...</p>
+                   <div className="d-flex justify-content-center">
+                   <ThreeDots 
+                       height="100" 
+                       width="100" 
+                       color="#00BFFF" 
+                       ariaLabel="loading"
+                   />
+               </div>
                 ) : error ? (
                     <p>{error}</p>
                 ) : forecast.length > 0 ? (

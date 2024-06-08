@@ -1,6 +1,6 @@
-// src/components/MyLocationWeather.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ThreeDots } from 'react-loader-spinner';
 import getWeatherIcon from '../utils/weatherIcons';
 
 const MyLocationWeather = () => {
@@ -40,7 +40,14 @@ const MyLocationWeather = () => {
     return (
         <div className=' mt-5'>
             {loading ? (
-                <p>Loading...</p>
+                <div className="d-flex justify-content-center">
+                    <ThreeDots
+                        height="100"
+                        width="100"
+                        color="#00BFFF"
+                        ariaLabel="loading"
+                    />
+                </div>
             ) : error ? (
                 <p>{error}</p>
             ) : location ? (

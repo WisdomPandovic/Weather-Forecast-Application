@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ThreeDots } from 'react-loader-spinner';
 import getWeatherIcon from '../utils/weatherIcons';
 
 const CurrentWeather = ({ city }) => {
@@ -32,7 +33,14 @@ const CurrentWeather = ({ city }) => {
             <div className="card-body border-0">
                 <h4 className="card-title mt-5 mb-3 text-white text-center">Today</h4>
                 {loading ? (
-                    <p>Loading...</p>
+                  <div className="d-flex justify-content-center">
+                  <ThreeDots 
+                      height="100" 
+                      width="100" 
+                      color="#00BFFF" 
+                      ariaLabel="loading"
+                  />
+              </div>
                 ) : error ? (
                     <p>{error}</p>
                 ) : weather ? (
