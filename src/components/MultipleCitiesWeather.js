@@ -2,7 +2,6 @@ import React from 'react';
 import CurrentWeather from './CurrentWeather';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-
 const cities = ['Abuja', 'Lagos', 'Kano', 'Imo'];
 
 const MultipleCitiesWeather = () => {

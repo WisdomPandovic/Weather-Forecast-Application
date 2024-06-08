@@ -97,12 +97,12 @@ body {
 }
 
 .weather-container p:first-child {
-  margin-right: 10px; /* Adjust spacing between the icon and temperature */
+  margin-right: 10px; 
 }
 
 .weather-container svg {
-  width: 100px; /* Adjust the width of the icon */
-  height: 100px; /* Adjust the height of the icon */
+  width: 100px;
+  height: 100px;
 }
 
 .temperature{
@@ -115,7 +115,7 @@ body {
 }
 
 .weather-icon {
-  width: 100px; /* Adjust the width of the icon */
-  height: 100px; /* Adjust the height of the icon */
-  margin-left: 10px; /* Adjust spacing between the city name and the icon */
+  width: 100px; 
+  height: 100px; 
+  margin-left: 10px; 
 }

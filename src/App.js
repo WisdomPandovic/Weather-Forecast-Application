@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +16,6 @@ const App = () => {
     const defaultCities = ['Abuja', 'Lagos', 'Kano', 'Imo'];
 
     useEffect(() => {
-        // Fetch and display weather forecast for the default cities when the app loads
         const fetchDefaultWeather = async () => {
             try {
                 const responses = await Promise.all(

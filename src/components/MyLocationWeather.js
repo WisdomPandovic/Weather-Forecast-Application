@@ -1,28 +1,7 @@
 // src/components/MyLocationWeather.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
-
-const getWeatherIcon = (description, color) => {
-    switch (description) {
-        case 'clear sky':
-            return <WiDaySunny  color={color} />;
-        case 'few clouds':
-        case 'scattered clouds':
-        case 'broken clouds':
-            return <WiCloudy color={color} />;
-        case 'shower rain':
-        case 'rain':
-            return <WiRain  color={color} />;
-        case 'snow':
-            return <WiSnow color={color} />;
-        case 'thunderstorm':
-            return <WiThunderstorm  color={color} />;
-        default:
-            return <WiDaySunny color={color} />;
-    }
-};
-
+import getWeatherIcon from '../utils/weatherIcons';
 
 const MyLocationWeather = () => {
     const [location, setLocation] = useState(null);
@@ -70,11 +49,9 @@ const MyLocationWeather = () => {
                     <h2>{location.name}</h2>
                     <p>{getCurrentDate()}</p>
                     <div className="weather-container">
-    <p>{getWeatherIcon(location.weather[0].description, "#F9C51A")}</p>
-    <p className="temperature">{location.main.temp}°C</p>
-</div>
-
-
+                        <p>{getWeatherIcon(location.weather[0].description, "#F9C51A")}</p>
+                        <p className="temperature">{location.main.temp}°C</p>
+                    </div>
                 </div>
             ) : null}
         </div>

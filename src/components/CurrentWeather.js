@@ -1,26 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
-
-const getWeatherIcon = (description, size, color) => {
-    switch (description) {
-        case 'clear sky':
-            return <WiDaySunny size={size} color={color} />;
-        case 'few clouds':
-        case 'scattered clouds':
-        case 'broken clouds':
-            return <WiCloudy size={size} color={color} />;
-        case 'shower rain':
-        case 'rain':
-            return <WiRain size={size} color={color} />;
-        case 'snow':
-            return <WiSnow size={size} color={color} />;
-        case 'thunderstorm':
-            return <WiThunderstorm size={size} color={color} />;
-        default:
-            return <WiDaySunny size={size} color={color} />;
-    }
-};
+import getWeatherIcon from '../utils/weatherIcons';
 
 const CurrentWeather = ({ city }) => {
     const [weather, setWeather] = useState(null);
@@ -50,19 +30,19 @@ const CurrentWeather = ({ city }) => {
     return (
         <div className="card mb-2 border-0">
             <div className="card-body border-0">
-                <h4 className="card-title mt-5 mb-3 text-white">Today</h4>
+                <h4 className="card-title mt-5 mb-3 text-white text-center">Today</h4>
                 {loading ? (
                     <p>Loading...</p>
                 ) : error ? (
                     <p>{error}</p>
                 ) : weather ? (
                     <div>
-                      <div className="weather-container">
-    <h3 className="card-title text-white">{city}</h3>
-    <div className="weather-icon">
-        {getWeatherIcon(weather.weather[0].description, 100, "#F9C51A")}
-    </div>
-</div>
+                        <div className="weather-container">
+                            <h3 className="card-title text-white">{city}</h3>
+                            <div className="weather-icon">
+                                {getWeatherIcon(weather.weather[0].description, "#F9C51A")}
+                            </div>
+                        </div>
 
                         <div className="d-flex justify-content-between text-white">
                             <p>WS: {weather.wind.speed} m/s</p>
@@ -71,7 +51,8 @@ const CurrentWeather = ({ city }) => {
 
                         <div className="d-flex justify-content-between text-white">
                             <p>H: {weather.main.humidity}%</p>
-                            <p>{weather.weather[0].description}</p>
+                            <p style={{ textTransform: 'capitalize' }}>{weather.weather[0].description}</p>
+
                         </div>
                     </div>
                 ) : (

@@ -1,4 +1,3 @@
-// src/components/Forecast.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { mockForecast } from '../mockData';
