@@ -159,3 +159,11 @@ body {
 .custom-card {
   height: 300px;
 }
+
+.forecast-card{
+  height: 80px;
+}
+
+.copyright H2 {
+  font-size: 1em;
+}

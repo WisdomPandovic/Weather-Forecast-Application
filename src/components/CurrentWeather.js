@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ThreeDots } from 'react-loader-spinner';
 import getWeatherIcon from '../utils/weatherIcons';
+import humidityImg from '../icons/humidity.png';
+import windImg from '../icons/wind.png';
+import celsiusImg from '../icons/celsius.png';
+import sunImg from '../icons/sun.png';
 
 const CurrentWeather = ({ city }) => {
     const [weather, setWeather] = useState(null);
@@ -44,7 +48,7 @@ const CurrentWeather = ({ city }) => {
 
     return (
         <div className="card mb-2 border-0">
-            <div className="card-body border-0 custom-card ">
+            <div className="card-body border-0 custom-card mb-5">
                 {loading ? (
                     <div className="d-flex justify-content-center">
                         <ThreeDots
@@ -68,17 +72,104 @@ const CurrentWeather = ({ city }) => {
                             </div>
                         </div>
 
-                        <div className="text-white temperature-containers ">
+                        <div className="text-white temperature-containers">
                             <p className="text-white">{currentDateTime}</p>
                             <p className='temperature'>{Math.floor(weather.main.temp)}° </p>
                         </div>
 
                         <div className="d-flex justify-content-between text-white">
                             <p>H: {weather.main.humidity}%</p>
-                            <p>WS: {weather.wind.speed} m/s</p>
+                            <p>WS: {Math.floor(weather.wind.speed)} m/s</p>
                             <p style={{ textTransform: 'capitalize' }}>{weather.weather[0].description}</p>
-
                         </div>
+                    </div>
+                ) : (
+                    <p>No data available</p>
+                )}
+            </div>
+
+            <div className="card-body border-0 forecast-card mb-2">
+                {loading ? (
+                    <div className="d-flex justify-content-center">
+                        <ThreeDots
+                            height="100"
+                            width="100"
+                            color="#00BFFF"
+                            ariaLabel="loading"
+                        />
+                    </div>
+                ) : error ? (
+                    <p>{error}</p>
+                ) : weather ? (
+                    <div className="d-flex justify-content-between text-white">
+                        <p><img src={humidityImg} alt="humidity" style={{ width: '24px', marginRight: '8px' }} /> Humidity</p>
+                        <p>{weather.main.humidity}%</p>
+                    </div>
+                ) : (
+                    <p>No data available</p>
+                )}
+            </div>
+
+            <div className="card-body border-0 forecast-card mb-2">
+                {loading ? (
+                    <div className="d-flex justify-content-center">
+                        <ThreeDots
+                            height="100"
+                            width="100"
+                            color="#00BFFF"
+                            ariaLabel="loading"
+                        />
+                    </div>
+                ) : error ? (
+                    <p>{error}</p>
+                ) : weather ? (
+                    <div className="d-flex justify-content-between text-white">
+                        <p><img src={windImg} alt="wind" style={{ width: '24px', marginRight: '8px' }} /> Wind Speed</p>
+                        <p>{Math.floor(weather.wind.speed)} m/s</p>
+                    </div>
+                ) : (
+                    <p>No data available</p>
+                )}
+            </div>
+
+            <div className="card-body border-0 forecast-card mb-2">
+                {loading ? (
+                    <div className="d-flex justify-content-center">
+                        <ThreeDots
+                            height="100"
+                            width="100"
+                            color="#00BFFF"
+                            ariaLabel="loading"
+                        />
+                    </div>
+                ) : error ? (
+                    <p>{error}</p>
+                ) : weather ? (
+                    <div className="d-flex justify-content-between text-white">
+                        <p><img src={sunImg} alt="condition" style={{ width: '24px', marginRight: '8px' }} /> Condition</p>
+                        <p style={{ textTransform: 'capitalize' }}>{weather.weather[0].description}</p>
+                    </div>
+                ) : (
+                    <p>No data available</p>
+                )}
+            </div>
+
+            <div className="card-body border-0 forecast-card mb-2">
+                {loading ? (
+                    <div className="d-flex justify-content-center">
+                        <ThreeDots
+                            height="100"
+                            width="100"
+                            color="#00BFFF"
+                            ariaLabel="loading"
+                        />
+                    </div>
+                ) : error ? (
+                    <p>{error}</p>
+                ) : weather ? (
+                    <div className="d-flex justify-content-between align-items-center text-white">
+                        <p><img src={celsiusImg} alt="temperature" style={{ width: '24px', marginRight: '8px' }} /> Temperature</p>
+                        <p>{Math.floor(weather.main.temp)}°</p>
                     </div>
                 ) : (
                     <p>No data available</p>

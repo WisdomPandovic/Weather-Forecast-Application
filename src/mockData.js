@@ -1,4 +1,3 @@
-// src/mockData.js
 export const mockCurrentWeather = {
     main: {
         temp: 22,
