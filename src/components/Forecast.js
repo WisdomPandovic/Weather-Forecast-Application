@@ -52,7 +52,7 @@ const Forecast = ({ city }) => {
     return (
         <div className="card border-0">
             <div className="card-body">
-                <h2 className="card-title mb-5 text-white">This week Forecast for {city}</h2>
+                <h2 className=" mb-5 text-white">This week Forecast for {city}</h2>
                 {loading ? (
                     <div className="d-flex justify-content-center">
                         <ThreeDots

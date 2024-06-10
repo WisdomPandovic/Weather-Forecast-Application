@@ -64,23 +64,19 @@ const CurrentWeather = ({ city }) => {
                     <div>
                         <div className="current-weather-container">
                             <div>
-                                <p className="card-title mt-5 mb-3 text-white">Today</p>
+                                <h2 className="card-title mt-5 mb-3 text-white">Today</h2>
+                                <p className="text-white">{currentDateTime}</p>
                                 <h3 className="card-title text-white">{`${weather.name}, ${weather.sys.country}`}</h3>
                             </div>
-                            <div className="weather-icon">
-                                {getWeatherIcon(weather.weather[0].description, "#F9C51A")}
-                            </div>
+
                         </div>
 
                         <div className="text-white temperature-containers">
-                            <p className="text-white">{currentDateTime}</p>
-                            <p className='temperature'>{Math.floor(weather.main.temp)}° </p>
-                        </div>
+                            <div className="weather-icon">
+                                {getWeatherIcon(weather.weather[0].description, "#F9C51A")}
+                            </div>
 
-                        <div className="d-flex justify-content-between text-white">
-                            <p>H: {weather.main.humidity}%</p>
-                            <p>WS: {Math.floor(weather.wind.speed)} m/s</p>
-                            <p style={{ textTransform: 'capitalize' }}>{weather.weather[0].description}</p>
+                            <p className='temperature'>{Math.floor(weather.main.temp)}° </p>
                         </div>
                     </div>
                 ) : (
