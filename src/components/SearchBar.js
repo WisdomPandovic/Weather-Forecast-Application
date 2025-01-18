@@ -50,7 +50,7 @@ const SearchBar = ({ onSearch }) => {
                 <FiSearch className='search-icon' />
             </button>
             {suggestions.length > 0 && (
-                <ul className="list-group position-absolute w-100 mb-3">
+                <ul className="list-group position-absolute w-100 ">
                     {suggestions.map((suggestion, index) => (
                         <li
                             key={index}
